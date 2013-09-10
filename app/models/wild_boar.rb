@@ -1,0 +1,1 @@
+class WildBoar < Animal; end

@@ -7,6 +7,3 @@ class Animal < ActiveRecord::Base
 	scope :wild_boars, -> { where(race: 'WildBoar') }
 end
 
-class Lion < Animal; end
-class Meerkat < Animal; end
-class WildBoar < Animal; end
