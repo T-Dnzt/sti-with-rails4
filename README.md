@@ -1,0 +1,1 @@
+A simple Rails 4 project showing Single Table Inheritance.
