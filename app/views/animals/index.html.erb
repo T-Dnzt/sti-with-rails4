@@ -1,0 +1,6 @@
+<h1>The Lion Tribe</h1>
+<ul>
+	<% Animal.all.each do |animal| %>
+		<li><%= animal.name %> (<%= animal.race %>)</li>
+	<% end %>
+</ul>
