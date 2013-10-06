@@ -1,6 +1,29 @@
 <h1>The Lion Tribe</h1>
-<ul>
-	<% Animal.all.each do |animal| %>
-		<li><%= animal.name %> (<%= animal.race %>)</li>
-	<% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Race</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.name %></td>
+        <td><%= animal.race %></td>
+        <td><%= animal.age %></td>
+        <td><%= link_to 'Show', sti_animal_path(animal.race, animal) %></td>
+        <td><%= link_to 'Edit', sti_animal_path(animal.race, animal, :edit) %></td>
+        <td><%= link_to 'Destroy', sti_animal_path(animal.race, animal), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "See all #{animal.race.pluralize}", sti_animal_path(animal.race) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New #{@race}", sti_animal_path(@race, nil, :new) %>
+<%= link_to 'See all animals', sti_animal_path %>

@@ -9,5 +9,11 @@ class Animal < ActiveRecord::Base
 	def talk
 		raise 'Abstract Method'
 	end
+
+  class << self
+    def races
+      %w(lion wild_boar meerkat)
+    end
+  end
 end
 
