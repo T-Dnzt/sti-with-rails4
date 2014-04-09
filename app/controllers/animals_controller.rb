@@ -27,7 +27,7 @@ class AnimalsController < ApplicationController
   end
 
   def update
-    if @animal.update(params[:animal])
+    if @animal.update(animal_params)
       redirect_to @animal, notice: "#{race} was successfully created."
     else
       render action: 'edit'
@@ -59,7 +59,7 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(race.downcase.to_sym).permit(:name, :race, :age)
+    params.require(race.underscore.to_sym).permit(:name, :race, :age)
   end
 
 end
