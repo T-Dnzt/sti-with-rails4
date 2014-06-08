@@ -47,7 +47,7 @@ class AnimalsController < ApplicationController
   end
 
   def race
-    params[:type] || "Animal"
+    Animal.races.include?(params[:type]) ? params[:type] : "Animal"
   end
 
   def race_class
