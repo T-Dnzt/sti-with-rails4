@@ -1,7 +1,6 @@
 module AnimalsHelper
   
   def sti_animal_path(race = "animal", animal = nil, action = nil)
-    Rails.logger.info "FIFOU #{format_sti(action, race, animal)}_path"
     send "#{format_sti(action, race, animal)}_path", animal
   end
 

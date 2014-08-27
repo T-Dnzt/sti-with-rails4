@@ -14,7 +14,7 @@ class Animal < ActiveRecord::Base
 
   class << self
     def races
-      %w(lion wild_boar meerkat)
+      %w(Lion WildBoar Meerkat)
     end
   end
 end
